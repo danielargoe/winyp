@@ -6,12 +6,16 @@ import (
 	"github.com/ipinfo/go/v2/ipinfo"
 )
 
-func GetIPData() (string, string) {
+func GetLOCData() string {
 	loc, err := ipinfo.GetIPLocation(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	return loc
+}
+
+func GetIPData() string {
 	country, err := ipinfo.GetIPCountry(nil)
 	if err != nil {
 		log.Fatal(err)
@@ -19,5 +23,5 @@ func GetIPData() (string, string) {
 
 	emoji := ipinfo.GetCountryFlagEmoji(country)
 
-	return loc, emoji
+	return emoji
 }

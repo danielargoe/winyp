@@ -1,5 +1,10 @@
 package internal
 
+type Data struct {
+	Location Location
+	Current Current
+}
+
 type Location struct {
 	Name            string  `json:"name"`
 	Region          string  `json:"region"`

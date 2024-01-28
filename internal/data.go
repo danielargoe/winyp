@@ -7,12 +7,7 @@ import (
 	"net/http"
 )
 
-type Body struct {
-	Location Location
-	Current Current
-}
-
-func GetData(key string, loc string) Body {
+func GetData(key string, loc string) Data {
 	url := "http://api.weatherapi.com/v1/current.json?key=" + key + "&q=" + loc
 
 	res, err := http.Get(url)
@@ -27,7 +22,7 @@ func GetData(key string, loc string) Body {
 		log.Fatal(err)
 	}
 
-	var j Body
+	var j Data
 	err = json.Unmarshal(body, &j)
 	if err != nil {
 		log.Fatal(err)
