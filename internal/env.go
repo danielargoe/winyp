@@ -7,8 +7,8 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func GetDotEnv() string {
-	err := godotenv.Load("../../.env")
+func GetDotEnv(path string) string {
+	err := godotenv.Load(path)
 	if err != nil {
 		log.Fatal(err)
 	}
