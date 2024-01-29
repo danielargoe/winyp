@@ -13,6 +13,9 @@ func GetDotEnv(path string) string {
 		log.Fatal(err)
 	}
 
-	return os.Getenv("APIKEY")
+	key := os.Getenv("APIKEY")
 
+	os.Setenv("APIKEY", key)
+
+	return key
 }

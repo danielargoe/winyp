@@ -5,7 +5,9 @@ import (
 )
 
 func main() {
-	key := internal.GetDotEnv(".env")
+	// key := internal.GetDotEnv(".env")
+	// https://www.weatherapi.com/
+	key := "" // enter API Key 
 	loc := internal.GetLOCData()
 	emoji := internal.GetIPData()
 	data := internal.GetData(key, loc)
